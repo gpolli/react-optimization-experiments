@@ -17,7 +17,10 @@
     "test:coverage": "vitest --project unit --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "codegen": "graphql-codegen --config codegen.ts",
+    "codegen:watch": "graphql-codegen --config codegen.ts --watch",
+    "commit": "GIT_EDITOR=true git commit"
   },
   "lint-staged": {
     "*.{ts,tsx,mjs,js,jsx}": [
@@ -29,11 +32,14 @@
     ]
   },
   "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@tanstack/react-query": "^5.90.21",
     "@tanstack/react-query-devtools": "^5.91.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "graphql": "^16.13.1",
+    "graphql-request": "^7.4.0",
     "lucide-react": "^0.575.0",
     "next": "16.1.6",
     "postcss": "^8.5.6",
@@ -49,6 +55,9 @@
     "@chromatic-com/storybook": "^5.0.1",
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
+    "@commitlint/types": "^20.5.0",
+    "@graphql-codegen/cli": "^6.2.1",
+    "@graphql-codegen/client-preset": "^5.2.4",
     "@storybook/addon-a11y": "^10.2.13",
     "@storybook/addon-docs": "^10.2.13",
     "@storybook/addon-onboarding": "^10.2.13",
@@ -64,6 +73,7 @@
     "@vitejs/plugin-react": "^5.1.4",
     "@vitest/browser-playwright": "^4.0.18",
     "@vitest/coverage-v8": "^4.0.18",
+    "czg": "^1.12.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
@@ -96,5 +106,6 @@
       "sharp",
       "unrs-resolver"
     ]
-  }
+  },
+  "type": "module"
 }

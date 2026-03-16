@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Reconnect stdin to the terminal so czg can show its interactive prompt
+# (git hooks have stdin connected to /dev/null by default)
+exec < /dev/tty
+czg --hook || true
