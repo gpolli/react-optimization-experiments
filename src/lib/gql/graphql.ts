@@ -222,6 +222,13 @@ export const GetPostsDocument = {
           {
             kind: 'Field',
             name: { kind: 'Name', value: 'posts' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'first' },
+                value: { kind: 'IntValue', value: '10' },
+              },
+            ],
             selectionSet: {
               kind: 'SelectionSet',
               selections: [

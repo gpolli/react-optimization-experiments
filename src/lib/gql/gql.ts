@@ -14,12 +14,13 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-  'query GetPosts {\n  posts {\n    id\n    title\n  }\n}': typeof types.GetPostsDocument
-  '\n  query GetPosts {\n    posts {\n      id\n      title\n    }\n  }\n': typeof types.GetPostsDocument
+  'query GetPosts {\n  posts(first: 10) {\n    id\n    title\n  }\n}': typeof types.GetPostsDocument
+  '\n  query GetPosts {\n    posts(first: 10) {\n      id\n      title\n    }\n  }\n': typeof types.GetPostsDocument
 }
 const documents: Documents = {
-  'query GetPosts {\n  posts {\n    id\n    title\n  }\n}': types.GetPostsDocument,
-  '\n  query GetPosts {\n    posts {\n      id\n      title\n    }\n  }\n': types.GetPostsDocument,
+  'query GetPosts {\n  posts(first: 10) {\n    id\n    title\n  }\n}': types.GetPostsDocument,
+  '\n  query GetPosts {\n    posts(first: 10) {\n      id\n      title\n    }\n  }\n':
+    types.GetPostsDocument,
 }
 
 /**
@@ -40,14 +41,14 @@ export function graphql(source: string): unknown
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: 'query GetPosts {\n  posts {\n    id\n    title\n  }\n}',
-): (typeof documents)['query GetPosts {\n  posts {\n    id\n    title\n  }\n}']
+  source: 'query GetPosts {\n  posts(first: 10) {\n    id\n    title\n  }\n}',
+): (typeof documents)['query GetPosts {\n  posts(first: 10) {\n    id\n    title\n  }\n}']
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: '\n  query GetPosts {\n    posts {\n      id\n      title\n    }\n  }\n',
-): (typeof documents)['\n  query GetPosts {\n    posts {\n      id\n      title\n    }\n  }\n']
+  source: '\n  query GetPosts {\n    posts(first: 10) {\n      id\n      title\n    }\n  }\n',
+): (typeof documents)['\n  query GetPosts {\n    posts(first: 10) {\n      id\n      title\n    }\n  }\n']
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {}
