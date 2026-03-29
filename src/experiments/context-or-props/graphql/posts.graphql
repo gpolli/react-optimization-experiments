@@ -1,5 +1,5 @@
 query GetPosts {
-  posts {
+  posts(first: 10) {
     id
     title
   }
