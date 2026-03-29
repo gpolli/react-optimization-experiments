@@ -6,9 +6,9 @@ export type ContainerB = FC
 
 export type Root = FC<{
   children: React.ReactNode
+  countDisplayRef: React.RefObject<HTMLSpanElement | null>
   name: string
   ref: React.Ref<HTMLDivElement>
-  renderCount: number
 }>
 
 export type ChildLevel1 = FC<{
