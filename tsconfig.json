@@ -24,7 +24,8 @@
       "@/app/*": ["./src/app/*"],
       "@/shadcn/*": ["./src/components/ui/*"],
       "@/experiments/*": ["./src/experiments/*"],
-      "@/lib/*": ["./src/lib/*"]
+      "@/lib/*": ["./src/lib/*"],
+      "@/graphql-types": ["./src/lib/gql/graphql"]
     }
   },
   "include": [
